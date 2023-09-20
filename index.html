@@ -9,9 +9,10 @@
 
     <div id="app">
         
-        <h2 v-if="getFinished == false">Loading...</h2>
-        <ul v-else>
+       
+        <ul v-if="emailList.length == 10">
             <li v-for="email in emailList">{{email}}</li>
+            
         </ul>
 
     </div>
