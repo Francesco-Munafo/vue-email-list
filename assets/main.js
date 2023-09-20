@@ -5,22 +5,23 @@ createApp({
     return {
 
         emailList:[],
+        getFinished: false
 
     }
   },
-  mounted(){
+  async mounted(){
 
    for (let i = 0; i < 10; i++) {
-        axios
+        await axios
     .get('https://flynn.boolean.careers/exercises/api/random/mail')
     .then(response => {
         console.log(response);
 
         this.emailList.push(response.data.response);   
     }) 
-
-        
-    }
+    
+  }
+    this.getFinished = true
 
     console.log(this.emailList);
 
